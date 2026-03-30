@@ -1,0 +1,81 @@
+---
+title: "Homework9"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyverse)
+```
+
+### Question 1
+
+```{r}
+percentage_table<-babynames::babynames %>% 
+  mutate(percentage = round(prop * 100, 2))
+
+percentage_table %>% head() %>% knitr::kable()
+```
+^[Question 1 complete]
+
+
+### Question 2
+
+
+```{r}
+description_column<-babynames::babynames %>%
+  mutate(
+    percentage = round(prop * 100, 2), 
+    description = str_glue("{percentage}% in {year}")
+  ) 
+description_column%>% head() %>% knitr::kable()
+```
+
+^[Question 2 complete]
+
+
+
+### Question 3
+
+```{r}
+lauren_names<-description_column %>% filter(name == "Lauren", sex == "F") 
+
+lauren_names%>% head() %>% knitr::kable()
+```
+
+^[Question 3 complete]
+
+
+### Question 4
+
+```{r}
+set.seed(123) 
+
+set_seed_data<-lauren_names%>% slice_sample(n = 5) %>%
+  arrange(year)
+
+set_seed_data %>% head() %>% knitr::kable()
+```
+
+^[Question 4 complete]
+
+
+### Question 5
+
+```{r}
+final_string<-set_seed_data%>% pull(description) %>%
+  str_flatten_comma(last = ", and ")
+
+str_view(final_string)
+```
+
+^[Question 5 complete]
+
+```{r}
+cat("Out of all male names, the name Lauren represented ", final_string, ".", sep = "")
+```
+
+^[Question 6 complete]
