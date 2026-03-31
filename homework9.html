@@ -746,11 +746,11 @@ set_seed_data %&gt;% head() %&gt;% knitr::kable()</code></pre>
 <pre class="r"><code>final_string&lt;-set_seed_data%&gt;% pull(description) %&gt;%
   str_flatten_comma(last = &quot;, and &quot;)
 
-str_view(final_string)</code></pre>
+str_view(final_string) </code></pre>
 <pre><code>## [1] │ 0.03% in 1949, 0.07% in 1966, 0.9% in 1986, 0.62% in 2002, and 0.16% in 2014</code></pre>
 <p><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
-<pre class="r"><code>cat(&quot;Out of all male names, the name Lauren represented &quot;, final_string, &quot;.&quot;, sep = &quot;&quot;)</code></pre>
-<pre><code>## Out of all male names, the name Lauren represented 0.03% in 1949, 0.07% in 1966, 0.9% in 1986, 0.62% in 2002, and 0.16% in 2014.</code></pre>
+<pre class="r"><code>cat(&quot;Out of all female names, the name Lauren represented &quot;, final_string, &quot;.&quot;, sep = &quot;&quot;)</code></pre>
+<pre><code>## Out of all female names, the name Lauren represented 0.03% in 1949, 0.07% in 1966, 0.9% in 1986, 0.62% in 2002, and 0.16% in 2014.</code></pre>
 <p><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
 </div>
 <div class="footnotes footnotes-end-of-document">

@@ -69,13 +69,13 @@ set_seed_data %>% head() %>% knitr::kable()
 final_string<-set_seed_data%>% pull(description) %>%
   str_flatten_comma(last = ", and ")
 
-str_view(final_string)
+str_view(final_string) 
 ```
 
 ^[Question 5 complete]
 
 ```{r}
-cat("Out of all male names, the name Lauren represented ", final_string, ".", sep = "")
+cat("Out of all female names, the name Lauren represented ", final_string, ".", sep = "")
 ```
 
 ^[Question 6 complete]
